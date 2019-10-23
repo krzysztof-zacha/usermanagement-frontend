@@ -9,6 +9,9 @@ import {UserDetailComponent} from './user/user-detail/user-detail.component';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MenuComponent} from './components/menu/menu.component';
 import {MatButtonModule} from "@angular/material/button";
+import {MatTableModule} from "@angular/material/table";
+import {UserService} from "./user/user.service";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -16,15 +19,18 @@ import {MatButtonModule} from "@angular/material/button";
     AboutComponent,
     UserListComponent,
     UserDetailComponent,
-    MenuComponent
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule,
+    MatTableModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
