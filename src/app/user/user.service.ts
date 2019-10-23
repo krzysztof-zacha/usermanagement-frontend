@@ -8,7 +8,7 @@ import {User} from "./user";
   providedIn: 'root'
 })
 export class UserService {
-  private url = 'localhost:8080/user';
+  private url = 'http://localhost:8080/user';
   private headers = new Headers({
     'Content-Type': 'application/json'
   });
