@@ -1,4 +1,4 @@
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {throwError as observableThrowError} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
@@ -9,9 +9,11 @@ import {User} from "./user";
 })
 export class UserService {
   private url = 'http://localhost:8080/user';
-  private headers = new Headers({
-    'Content-Type': 'application/json'
-  });
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
+  };
 
   constructor(private http: HttpClient) {
   }
@@ -28,18 +30,18 @@ export class UserService {
 
   delete(user: User) {
     const url = `${this.url}/${user.id}`;
-    return this.http.delete(url).pipe(catchError(this.handleError));
+    return this.http.delete(url, this.httpOptions).pipe(catchError(this.handleError));
   }
 
   private post(user: User) {
+
     return this.http
       .post<User>(this.url, user)
       .pipe(catchError(this.handleError));
   }
 
   private put(user: User) {
-    const url = `${this.url}/${user.id}`;
-    return this.http.put<User>(url, user).pipe(catchError(this.handleError));
+    return this.http.put<User>(this.url, user).pipe(catchError(this.handleError));
   }
 
   private handleError(res: HttpErrorResponse | any) {

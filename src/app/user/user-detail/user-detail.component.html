@@ -1,3 +1,42 @@
-DETAILS
-<button (click)="goBack()">Back</button>
-<button (click)="save()">Save</button>
+<form [formGroup]="userForm">
+
+  <mat-form-field class="full-width">
+    <mat-label>Username:</mat-label>
+    <input matInput formControlName="username">
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Name:</mat-label>
+    <input matInput formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Surname:</mat-label>
+    <input matInput formControlName="surname">
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>E-mail:</mat-label>
+    <input matInput formControlName="email">
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Role:</mat-label>
+    <mat-select formControlName="role">
+      <mat-option *ngFor="let role of roles" [value]="role">
+        {{role}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-label>Enabled:</mat-label>
+  <mat-radio-group class="full-width" formControlName="enabled">
+    <mat-radio-button class="space" value="true">TRUE</mat-radio-button>
+    <mat-radio-button value="false" class="space">FALSE</mat-radio-button>
+  </mat-radio-group>
+
+</form>
+
+
+<button mat-raised-button color="primary" (click)="cancel()">Cancel</button>
+<button mat-raised-button color="primary" class="space" (click)="save()">Save</button>

@@ -15,6 +15,11 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatSortModule} from "@angular/material/sort";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
+import {MatDialog, MatDialogModule} from "@angular/material/dialog";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatSelectModule} from "@angular/material/select";
+import {MatOptionModule} from "@angular/material/core";
+import {MatRadioModule} from "@angular/material/radio";
 
 @NgModule({
   declarations: [
@@ -35,6 +40,11 @@ import {MatInputModule} from "@angular/material/input";
     MatSortModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatRadioModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
