@@ -1,23 +1,40 @@
+<h2 matDialogTitle>{{title}}</h2>
+
 <form [formGroup]="userForm">
 
   <mat-form-field class="full-width">
     <mat-label>Username:</mat-label>
+    <mat-error *ngIf="userForm.controls.username.hasError('maxlength')">
+      Value too length, the maximum is {{userForm.controls.username.errors.maxlength.requiredLength}}.
+    </mat-error>
     <input matInput formControlName="username">
   </mat-form-field>
 
   <mat-form-field class="full-width">
     <mat-label>Name:</mat-label>
     <input matInput formControlName="name">
+    <mat-error *ngIf="userForm.controls.name.hasError('maxlength')">
+      Value too length, the maximum is {{userForm.controls.name.errors.maxlength.requiredLength}}.
+    </mat-error>
   </mat-form-field>
 
   <mat-form-field class="full-width">
     <mat-label>Surname:</mat-label>
     <input matInput formControlName="surname">
+    <mat-error *ngIf="userForm.controls.surname.hasError('maxlength')">
+      Value too length, the maximum is {{userForm.controls.surname.errors.maxlength.requiredLength}}.
+    </mat-error>
   </mat-form-field>
 
   <mat-form-field class="full-width">
     <mat-label>E-mail:</mat-label>
     <input matInput formControlName="email">
+    <mat-error *ngIf="userForm.controls.email.hasError('email')">
+      Please enter a valid email address like i.e. krzysztof.zacha@gmail.com
+    </mat-error>
+    <mat-error *ngIf="userForm.controls.email.hasError('maxlength')">
+      Value too length, the maximum is {{userForm.controls.email.errors.maxlength.requiredLength}}.
+    </mat-error>
   </mat-form-field>
 
   <mat-form-field class="full-width">
