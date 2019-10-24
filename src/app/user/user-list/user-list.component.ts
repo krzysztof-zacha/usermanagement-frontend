@@ -4,6 +4,7 @@ import {UserService} from "../user.service";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatDialog} from "@angular/material/dialog";
 import {UserDetailComponent} from "../user-detail/user-detail.component";
+import {AlertDialogComponent} from "./alert-dialog/alert-dialog.component";
 
 @Component({
   selector: 'app-user-list',
@@ -23,13 +24,16 @@ export class UserListComponent implements OnInit {
     this.loadAllUsers();
   }
 
-
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   delete(user: User) {
-    if (confirm("Are you sure to delete " + user.name)) {
+    if (this.dataSource.data.length == 1) {
+      this.dialog.open(AlertDialogComponent, {
+        width: '500px',
+      });
+    } else if (confirm("Are you sure to delete " + user.name)) {
       this.userService.delete(user).subscribe(() => this.loadAllUsers());
     }
   }
@@ -41,7 +45,6 @@ export class UserListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
       this.loadAllUsers();
     });
   }

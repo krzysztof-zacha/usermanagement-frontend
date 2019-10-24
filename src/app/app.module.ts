@@ -15,11 +15,12 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatSortModule} from "@angular/material/sort";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
-import {MatDialog, MatDialogModule} from "@angular/material/dialog";
+import {MatDialogModule} from "@angular/material/dialog";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatSelectModule} from "@angular/material/select";
 import {MatOptionModule} from "@angular/material/core";
 import {MatRadioModule} from "@angular/material/radio";
+import {AlertDialogComponent} from "./user/user-list/alert-dialog/alert-dialog.component";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {MatRadioModule} from "@angular/material/radio";
     UserListComponent,
     UserDetailComponent,
     MenuComponent,
+    AlertDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +48,7 @@ import {MatRadioModule} from "@angular/material/radio";
     MatOptionModule,
     MatRadioModule
   ],
+  entryComponents:[AlertDialogComponent],
   providers: [UserService],
   bootstrap: [AppComponent]
 })
