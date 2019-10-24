@@ -26,4 +26,8 @@ export class UserListComponent implements OnInit {
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+  delete(user: User) {
+    this.userService.delete(user).subscribe();
+  }
 }

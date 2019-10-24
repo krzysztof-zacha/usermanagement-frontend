@@ -28,7 +28,7 @@ export class UserService {
 
   delete(user: User) {
     const url = `${this.url}/${user.id}`;
-    return this.http.delete<User>(url).pipe(catchError(this.handleError));
+    return this.http.delete(url).pipe(catchError(this.handleError));
   }
 
   private post(user: User) {
