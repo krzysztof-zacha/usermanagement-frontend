@@ -1,55 +1,60 @@
-<button mat-raised-button color="primary" (click)="openUserDetail()">Add new user</button>
+<div class="col-md-12">
+  <button mat-raised-button color="primary" (click)="openUserDetail()">Add new user</button>
+</div>
 
+<div class="col-md-12">
 <mat-form-field>
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
 </mat-form-field>
+</div>
+<div class="col-md-12">
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
-<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Username</th>
+      <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+    </ng-container>
 
-  <ng-container matColumnDef="username">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Username</th>
-    <td mat-cell *matCellDef="let element"> {{element.username}} </td>
-  </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name</th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
 
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Name</th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-  </ng-container>
+    <ng-container matColumnDef="surname">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Surname</th>
+      <td mat-cell *matCellDef="let element"> {{element.surname}} </td>
+    </ng-container>
 
-  <ng-container matColumnDef="surname">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Surname</th>
-    <td mat-cell *matCellDef="let element"> {{element.surname}} </td>
-  </ng-container>
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> E-mail</th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
 
-  <ng-container matColumnDef="email">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> E-mail</th>
-    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
-  </ng-container>
+    <ng-container matColumnDef="role">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Role</th>
+      <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+    </ng-container>
 
-  <ng-container matColumnDef="role">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Role</th>
-    <td mat-cell *matCellDef="let element"> {{element.role}} </td>
-  </ng-container>
+    <ng-container matColumnDef="registrationDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Registration Date</th>
+      <td mat-cell *matCellDef="let element"> {{formatDate(element.registrationDate)}} </td>
+    </ng-container>
 
-  <ng-container matColumnDef="registrationDate">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Registration Date</th>
-    <td mat-cell *matCellDef="let element"> {{formatDate(element.registrationDate)}} </td>
-  </ng-container>
+    <ng-container matColumnDef="enabled">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Enabled</th>
+      <td mat-cell *matCellDef="let element"> {{element.enabled}} </td>
+    </ng-container>
 
-  <ng-container matColumnDef="enabled">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Enabled</th>
-    <td mat-cell *matCellDef="let element"> {{element.enabled}} </td>
-  </ng-container>
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-button color="primary" (click)="openUserDetail(element)">Edit</button>
+        <button mat-button color="primary" (click)="delete(element)">Delete</button>
+      </td>
+    </ng-container>
 
-  <ng-container matColumnDef="actions">
-    <th mat-header-cell *matHeaderCellDef> Actions</th>
-    <td mat-cell *matCellDef="let element">
-      <button mat-button color="primary" (click)="openUserDetail(element)">Edit</button>
-      <button mat-button color="primary" (click)="delete(element)">Delete</button>
-    </td>
-  </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
-
+</div>

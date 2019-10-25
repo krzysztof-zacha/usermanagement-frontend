@@ -1,4 +1,4 @@
-<h2 matDialogTitle>{{title}}</h2>
+<h2 matDialogTitle class="center-text">{{title}}</h2>
 
 <form [formGroup]="userForm">
 
@@ -54,6 +54,7 @@
 
 </form>
 
-
-<button mat-raised-button color="primary" (click)="cancel()">Cancel</button>
-<button mat-raised-button color="primary" class="space" (click)="save()">Save</button>
+<div class="text-right">
+  <button mat-raised-button color="primary" (click)="cancel()">Cancel</button>
+  <button mat-raised-button color="primary" class="space" (click)="save()">Save</button>
+</div>
