@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {User} from "../user";
 import {UserService} from "../user.service";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatDialog} from "@angular/material/dialog";
 import {UserDetailComponent} from "../user-detail/user-detail.component";
 import {AlertDialogComponent} from "./alert-dialog/alert-dialog.component";
+import {MatSort} from "@angular/material/sort";
 
 @Component({
   selector: 'app-user-list',
@@ -16,6 +17,7 @@ export class UserListComponent implements OnInit {
     'role', 'registrationDate', 'enabled', 'actions'];
 
   dataSource: MatTableDataSource<User> = new MatTableDataSource<User>([]);
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(private userService: UserService, public dialog: MatDialog) {
   }
@@ -57,6 +59,7 @@ export class UserListComponent implements OnInit {
   private loadAllUsers() {
     this.userService.findAll().subscribe((val: User[]) => {
       this.dataSource = new MatTableDataSource(val);
+      this.dataSource.sort = this.sort;
     })
   }
 
