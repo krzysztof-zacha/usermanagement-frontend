@@ -5,11 +5,15 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent {
 
-  constructor() { }
+  imageSrc = 'assets/img/foto1.png';
 
-  ngOnInit() {
+  onMouseEnter() {
+    this.imageSrc = 'assets/img/foto2.png';
   }
 
+  onMouseLeave() {
+    this.imageSrc = 'assets/img/foto1.png';
+  }
 }
