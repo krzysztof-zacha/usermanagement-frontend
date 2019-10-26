@@ -16,7 +16,7 @@
     </div>
   </section>
 
-  <section class="col-md-6">
+  <section class="col-md-6" id="about">
     <div class="right-section">
       <h3>
         <i class="material-icons">
@@ -109,11 +109,11 @@
 
     </div>
 
-    <div class="right-section" id="technologies">
+    <div class="right-section" id="experience">
       <h3>
         <i class="material-icons">
           card_travel
-        </i> Expierence
+        </i> Experience
       </h3>
 
     </div>
@@ -121,5 +121,16 @@
   </section>
 
 
-  <section class="col-md-1"></section>
+  <section class="col-md-1 right-menu">
+    <p>
+      <i class="material-icons" [routerLink] = "['/about']"  fragment="about">
+        person
+      </i>
+    </p>
+    <p>
+      <i class="material-icons" [routerLink] = "['/about']"  fragment="experience">
+        card_travel
+      </a>
+    </p>
+  </section>
 </div>
