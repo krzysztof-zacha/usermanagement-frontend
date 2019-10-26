@@ -1,18 +1,24 @@
-img {
+$line-color: rgba(125, 138, 159, 0.51);
+
+.photo {
   height: 200px;
   width: 200px;
   border-radius: 50%;
 }
 
+img {
+  height: 50px;
+}
+
 .left-section {
   text-align: center;
-  background-color: rgba(172, 191, 217, 0.51);
+  background-color: $line-color;
   padding-top: 30px;
   padding-bottom: 30px;
 }
 
 .right-section {
-  background-color: rgba(172, 191, 217, 0.51);
+  background-color: $line-color;
   padding: 30px;
   margin-bottom: 30px;
 
@@ -27,7 +33,7 @@ img {
 }
 
 hr {
-  background: rgba(125, 138, 159, 0.51);
+  background: $line-color;
 }
 
 table {
@@ -50,8 +56,32 @@ table {
 .right-menu {
   position: fixed;
   right: 10%;
+
   i:hover {
-    font-size:35px;
-    cursor:pointer;
+    font-size: 35px;
+    cursor: pointer;
   }
 }
+
+.mat-chip {
+  background-color: #4196bc;
+}
+
+.special-border {
+  border-bottom: 1px solid $line-color;
+}
+
+mat-chips-list {
+  padding-bottom: 5px;
+}
+
+#tech-table {
+  td:first-child {
+    vertical-align: top;
+  }
+
+  td {
+    padding-top: 10px;
+  }
+}
+

@@ -7,7 +7,7 @@
   <section class="col-md-3">
     <div class="left-section">
       <img (mouseenter)="onMouseEnter() " (mouseleave)="onMouseLeave()"
-           class="image" src="{{imageSrc}}" alt="Author photo">
+           class="photo" src="{{imageSrc}}" alt="Author photo">
       <h3>Krzysztof Zacha</h3>
       <h6>Fullstack developer</h6>
       <a href="/assets/cv.pdf" download>
@@ -40,7 +40,7 @@
         Personal information
       </h4>
       <section>
-        <table cellspacing="10">
+        <table>
           <colgroup>
             <col class="first-column"/>
             <col/>
@@ -115,11 +115,171 @@
           card_travel
         </i> Experience
       </h3>
+      <table id="tech-table">
+        <colgroup>
+          <col class="first-column"/>
+          <col/>
+        </colgroup>
+        <tr class="special-border">
+          <td>
+            <img src="assets/img/capgemini.png" alt="Capgemini"> Capgemini
+            <p>05.2014 – 04.2018</p>
+          </td>
+          <td>
+            <p class="small-margin">Senior Software Engineer (01.2017 – 04.2018), Software Engineer (05.2014
+              –01.2017)</p>
+            <p class="small-margin"><strong>Projects:</strong></p>
+            <ul>
+              <li>
+                <p class="small-margin">BMW (11.2017 - 04.2018)</p>
+                Creating a responsive web application for mechanics and specialists.
+                Technologies:
+                <mat-chip-list>
+                  <mat-chip color="primary">Java 8</mat-chip>
+                  <mat-chip color="primary">Hibernate</mat-chip>
+                  <mat-chip color="primary">Spring</mat-chip>
+                  <mat-chip color="primary">Git</mat-chip>
+                  <mat-chip color="primary">Angular 4</mat-chip>
+                  <mat-chip color="primary">Typescript</mat-chip>
+                  <mat-chip color="primary">HTML/CSS</mat-chip>
+                </mat-chip-list>
+              </li>
+              <li>
+                <p class="small-margin">LFU (11.2015 – 11.2017)</p>
+                Implementing server and client layer for Microservices-based application.
+                Technologies:
+                <mat-chip-list>
+                  <mat-chip color="primary">Java 8</mat-chip>
+                  <mat-chip color="primary">Hibernate</mat-chip>
+                  <mat-chip color="primary">Spring</mat-chip>
+                  <mat-chip color="primary">Git</mat-chip>
+                  <mat-chip color="primary">AngularJs</mat-chip>
+                  <mat-chip color="primary">Typescript</mat-chip>
+                  <mat-chip color="primary">HTML/CSS</mat-chip>
+                </mat-chip-list>
+              </li>
+              <li>
+                <p class="small-margin">BMW (07.2015-11.2015)</p>
+                Active participate  in Knowledge Transfer meetings in Polish-Indian team. Contact with German clients.
+                Technologies:
+                <mat-chip-list>
+                  <mat-chip color="primary">Java 6</mat-chip>
+                  <mat-chip color="primary">SQL</mat-chip>
+                  <mat-chip color="primary">Struts 1.2</mat-chip>
+                </mat-chip-list>
+              </li>
+              <li>
+                <p class="small-margin">Kuehne und Nagel (07.2014-07.2015)</p>
+                Working in Polish-German team (14 teammates)  on develop web application to monitoring containers/ shipments.
+                Technologies:
+                <mat-chip-list>
+                  <mat-chip color="primary">Java 7</mat-chip>
+                  <mat-chip color="primary">Jsp</mat-chip>
+                  <mat-chip color="primary">JSF</mat-chip>
+                  <mat-chip color="primary">Maven/Ant</mat-chip>
+                  <mat-chip color="primary">Wicket</mat-chip>
+                  <mat-chip color="primary">SVN</mat-chip>
+                </mat-chip-list>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr class="special-border">
+          <td>
+            <img src="assets/img/medit.png" alt="Medit"> Medit
+            <p>10.2012 – 05.2014</p>
+          </td>
+          <td>
+            <p class="small-margin">Java Developer </p>
+            Maintaining and creating tests (junit, selenium), extending data warehouse, creating test data, fixing bugs,
+            application development.
+            <p class="small-margin">
+              <strong>Technologies:</strong>
+            </p>
+            <mat-chip-list>
+              <mat-chip color="primary">Java EE</mat-chip>
+              <mat-chip color="primary">Spring</mat-chip>
+              <mat-chip color="primary">Hibernate</mat-chip>
+              <mat-chip color="primary">Maven</mat-chip>
+              <mat-chip color="primary">Wicket</mat-chip>
+              <mat-chip color="primary">SVN/GIT</mat-chip>
+            </mat-chip-list>
+          </td>
+        </tr>
+        <tr class="special-border">
+          <td>
+            <img src="assets/img/volvo.png" alt="Volvo"> Volvo
+            <p>07.2012 – 09.2012</p>
+          </td>
+          <td>
+            <p class="small-margin">Summer internship – Java Developer </p>
+            Working in 6 - members team in Scrum methodology. Solution implementation in existing web system in JEE
+            technology, creating desktop application (JSE), preparations design document and unit tests writing.
+            <p class="small-margin">
+              <strong>Technologies:</strong>
+            </p>
+            <mat-chip-list>
+              <mat-chip color="primary">Java 1.6</mat-chip>
+              <mat-chip color="primary">Struts 1.2</mat-chip>
+              <mat-chip color="primary">Hibernate</mat-chip>
+              <mat-chip color="primary">Maven</mat-chip>
+              <mat-chip color="primary">SVN</mat-chip>
+            </mat-chip-list>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="assets/img/solsoft.png" alt="Solsoft"> Solsoft
+            <p>02.2012 – 04.2012</p>
+          </td>
+          <td>
+            <p class="small-margin">Internship (part-time) </p>
+            Creating desktop application and module for existing web application. Testing and create tests scenarios.
+            <p class="small-margin">
+              <strong>Technologies:</strong>
+            </p>
+            <mat-chip-list>
+              <mat-chip color="primary">Java SE</mat-chip>
+              <mat-chip color="primary">Swing</mat-chip>
+              <mat-chip color="primary">JEE</mat-chip>
+              <mat-chip color="primary">Hibernate</mat-chip>
+              <mat-chip color="primary">Maven</mat-chip>
+              <mat-chip color="primary">SVN</mat-chip>
+            </mat-chip-list>
+          </td>
+        </tr>
+      </table>
+      <hr>
+      <h3 id="tech">
+        <i class="material-icons">
+          apps
+        </i> Technologies and tools
+      </h3>
+      <mat-chip-list>
+        <mat-chip color="primary">Java</mat-chip>
+        <mat-chip color="primary">Hiberate</mat-chip>
+        <mat-chip color="primary">Spring</mat-chip>
+        <mat-chip color="primary">SQL</mat-chip>
+        <mat-chip color="primary">HTML</mat-chip>
+        <mat-chip color="primary">Junit</mat-chip>
+        <mat-chip color="primary">Git</mat-chip>
+        <mat-chip color="primary">SVN</mat-chip>
+        <mat-chip color="primary">Bitbucket</mat-chip>
+        <mat-chip color="primary">Eclipse</mat-chip>
+        <mat-chip color="primary">InteliJ</mat-chip>
+        <mat-chip color="primary">Selenium</mat-chip>
+        <mat-chip color="primary">JS</mat-chip>
+        <mat-chip color="primary">AngularJs</mat-chip>
+        <mat-chip color="primary">Angular 2+</mat-chip>
+        <mat-chip color="primary">Maven</mat-chip>
+        <mat-chip color="primary">Jenkins</mat-chip>
+        <mat-chip color="primary">E2E Tests</mat-chip>
+      </mat-chip-list>
     </div>
 
     <div class="right-section" id="hobby">
       <h3>
-        <i class="material-icons"> sports_cricket </i> Hobby
+        <i class="material-icons"> emoji_symbols </i> Hobby
       </h3>
       <p>
         <i class="material-icons"> directions_run </i> Jogging
@@ -144,8 +304,13 @@
       </i>
     </p>
     <p>
+      <i class="material-icons" [routerLink]="['/about']" fragment="tech">
+        apps
+      </i>
+    </p>
+    <p>
       <i class="material-icons" [routerLink]="['/about']" fragment="hobby">
-        sports_cricket
+        emoji_symbols
       </i>
     </p>
   </section>

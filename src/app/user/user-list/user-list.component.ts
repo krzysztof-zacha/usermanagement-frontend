@@ -18,6 +18,7 @@ export class UserListComponent implements OnInit {
 
   dataSource: MatTableDataSource<User> = new MatTableDataSource<User>([]);
   @ViewChild(MatSort) sort: MatSort;
+  isActive = false;
 
   constructor(private userService: UserService, public dialog: MatDialog) {
   }
@@ -60,6 +61,7 @@ export class UserListComponent implements OnInit {
     this.userService.findAll().subscribe((val: User[]) => {
       this.dataSource = new MatTableDataSource(val);
       this.dataSource.sort = this.sort;
+      this.isActive = true;
     })
   }
 

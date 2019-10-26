@@ -22,6 +22,7 @@ import {MatOptionModule} from "@angular/material/core";
 import {MatRadioModule} from "@angular/material/radio";
 import {AlertDialogComponent} from "./user/user-list/alert-dialog/alert-dialog.component";
 import {MatChipsModule} from "@angular/material/chips";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import {MatChipsModule} from "@angular/material/chips";
     MatSelectModule,
     MatOptionModule,
     MatRadioModule,
-    MatChipsModule
+    MatChipsModule,
+    MatProgressSpinnerModule
   ],
   entryComponents:[AlertDialogComponent],
   providers: [UserService],
