@@ -115,7 +115,20 @@
           card_travel
         </i> Experience
       </h3>
+    </div>
 
+    <div class="right-section" id="hobby">
+      <h3>
+        <i class="material-icons"> sports_cricket </i> Hobby
+      </h3>
+      <p>
+        <i class="material-icons"> directions_run </i> Jogging
+         <i class="material-icons"> fitness_center </i> Gym
+         <i class="material-icons"> sports_motorsports </i> Motorcycle
+        <i class="material-icons"> library_books </i> Books
+        <i class="material-icons"> ac_unit </i> Snowboard
+        <i class="material-icons"> redeem </i> Travelling
+      </p>
     </div>
 
   </section>
@@ -123,13 +136,18 @@
 
   <section class="col-md-1 right-menu">
     <p>
-      <i class="material-icons" [routerLink] = "['/about']"  fragment="about">
+      <i class="material-icons" [routerLink]="['/about']" fragment="about">
         person
       </i>
     </p>
     <p>
-      <i class="material-icons" [routerLink] = "['/about']"  fragment="experience">
+      <i class="material-icons" [routerLink]="['/about']" fragment="experience">
         card_travel
+      </i>
+    </p>
+    <p>
+      <i class="material-icons" [routerLink]="['/about']" fragment="hobby">
+        sports_cricket
       </i>
     </p>
   </section>
