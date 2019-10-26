@@ -4,13 +4,34 @@
   border-radius: 50%;
 }
 
-.center {
+.left-section {
   text-align: center;
   background-color: rgba(172, 191, 217, 0.51);
   padding-top: 30px;
   padding-bottom: 30px;
 }
 
+.right-section {
+  background-color: rgba(172, 191, 217, 0.51);
+  padding: 30px;
+  h3{
+    margin-bottom: 30px;
+  }
+}
+
 .main-container {
   display: flex;
+  margin-top:30px;
+}
+
+hr {
+  background: rgba(125, 138, 159, 0.51);
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+.first-column {
+  width: 30%;
 }

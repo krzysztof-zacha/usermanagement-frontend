@@ -37,7 +37,6 @@ import {AlertDialogComponent} from "./user/user-list/alert-dialog/alert-dialog.c
     NoopAnimationsModule,
     MatButtonModule,
     MatTableModule,
-    MatTableModule,
     HttpClientModule,
     MatSortModule,
     MatFormFieldModule,
