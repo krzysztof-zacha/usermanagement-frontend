@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build --prod --aot",
     "test": "ng lint && ng test",
-    "deploy": "firebase deploy"
+    "deploy": "firebase deploy",
+    "firebase:login": "firebase login"
   },
   "husky": {
     "hooks": {
