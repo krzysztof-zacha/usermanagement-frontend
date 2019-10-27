@@ -6,6 +6,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {UserDetailComponent} from "../user-detail/user-detail.component";
 import {AlertDialogComponent} from "./alert-dialog/alert-dialog.component";
 import {MatSort} from "@angular/material/sort";
+import {ConfirmDialogComponent} from "./confirm-dialog/confirm-dialog.component";
 
 @Component({
   selector: 'app-user-list',
@@ -32,16 +33,32 @@ export class UserListComponent implements OnInit {
   }
 
   delete(user: User) {
-    if (this.dataSource.data.length == 1) {
-      this.dialog.open(AlertDialogComponent, {
-        width: '500px',
-      });
-    } else if (confirm("Are you sure to delete " + user.name)) {
-      this.userService.delete(user).subscribe(() => this.loadAllUsers());
+    if (this.isPossibleToDeleteUser()) {
+      this.dialog.open(AlertDialogComponent, {width: '500px',});
+    } else {
+      this.confirmDelete(user);
     }
   }
 
-  openUserDetail(user?: User) {
+  formatDate(registrationDate: any) {
+    return registrationDate ?
+      `${registrationDate.dayOfMonth}.${registrationDate.monthValue}.${registrationDate.year}` : '';
+  }
+
+  private confirmDelete(user: User) {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {width: '500px', data: user});
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.userService.delete(user).subscribe(() => this.loadAllUsers());
+      }
+    });
+  }
+
+  private isPossibleToDeleteUser() {
+    return this.dataSource.data.length == 1;
+  }
+
+  private openUserDetail(user?: User) {
     const dialogRef = this.dialog.open(UserDetailComponent, {
       width: '500px',
       data: user ? user : {}
@@ -52,12 +69,8 @@ export class UserListComponent implements OnInit {
     });
   }
 
-  formatDate(registrationDate: any) {
-    return registrationDate ?
-      `${registrationDate.dayOfMonth}.${registrationDate.monthValue}.${registrationDate.year}` : '';
-  }
-
   private loadAllUsers() {
+    this.isActive = false;
     this.userService.findAll().subscribe((val: User[]) => {
       this.dataSource = new MatTableDataSource(val);
       this.dataSource.sort = this.sort;

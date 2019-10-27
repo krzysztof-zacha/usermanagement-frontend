@@ -23,6 +23,7 @@ import {MatRadioModule} from "@angular/material/radio";
 import {AlertDialogComponent} from "./user/user-list/alert-dialog/alert-dialog.component";
 import {MatChipsModule} from "@angular/material/chips";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {ConfirmDialogComponent} from "./user/user-list/confirm-dialog/confirm-dialog.component";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     UserListComponent,
     UserDetailComponent,
     MenuComponent,
-    AlertDialogComponent
+    AlertDialogComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     MatChipsModule,
     MatProgressSpinnerModule
   ],
-  entryComponents:[AlertDialogComponent],
+  entryComponents:[AlertDialogComponent, ConfirmDialogComponent],
   providers: [UserService],
   bootstrap: [AppComponent]
 })
