@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  url: 'something'
+  url: 'https://kzacha-usermanagement-backend.herokuapp.com'
 };

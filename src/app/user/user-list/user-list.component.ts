@@ -49,6 +49,17 @@ export class UserListComponent implements OnInit {
     return this.isActive && this.dataSource.data.length > 0;
   }
 
+  openUserDetail(user?: User) {
+    const dialogRef = this.dialog.open(UserDetailComponent, {
+      width: '500px',
+      data: user ? user : {}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.loadAllUsers();
+    });
+  }
+
   private confirmDelete(user: User) {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {width: '500px', data: user});
     dialogRef.afterClosed().subscribe(result => {
@@ -62,16 +73,6 @@ export class UserListComponent implements OnInit {
     return this.dataSource.data.length == 1;
   }
 
-  private openUserDetail(user?: User) {
-    const dialogRef = this.dialog.open(UserDetailComponent, {
-      width: '500px',
-      data: user ? user : {}
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      this.loadAllUsers();
-    });
-  }
 
   private loadAllUsers() {
     this.isActive = false;
