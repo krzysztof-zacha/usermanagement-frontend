@@ -1,14 +1,19 @@
 {
   "name": "usermanagement-frontend",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "build": "ng build --prod --aot",
+    "test": "ng lint && ng test",
+    "deploy": "firebase deploy"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test",
+      "pre-push": "node firebase-deploy.js"
+    }
+  }
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.2.0",

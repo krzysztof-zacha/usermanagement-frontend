@@ -3,12 +3,13 @@ import {Injectable} from '@angular/core';
 import {throwError as observableThrowError} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
 import {User} from "./user";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private url = 'http://localhost:8080/user';
+  private url = environment.url + '/user';
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
