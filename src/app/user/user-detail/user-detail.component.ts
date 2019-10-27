@@ -29,7 +29,7 @@ export class UserDetailComponent {
       role: new FormControl(data.role, [Validators.required, Validators.maxLength(30)]),
       email: new FormControl(data.email, [Validators.required, Validators.maxLength(30),
         Validators.email]),
-      enabled: new FormControl(data.enabled, [Validators.required]),
+      enabled: new FormControl(data.enabled,),
     });
 
   }
@@ -40,6 +40,7 @@ export class UserDetailComponent {
     Object.keys(this.userForm.controls).forEach(key => {
       this.userForm.get(key).markAsTouched();
     });
+    this.userForm.updateValueAndValidity();
     if (this.userForm.valid) {
       this.userService.save(user)
         .subscribe(() => this.dialogRef.close());

@@ -45,6 +45,10 @@ export class UserListComponent implements OnInit {
       `${registrationDate.dayOfMonth}.${registrationDate.monthValue}.${registrationDate.year}` : '';
   }
 
+  showTable() {
+    return this.isActive && this.dataSource.data.length > 0;
+  }
+
   private confirmDelete(user: User) {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {width: '500px', data: user});
     dialogRef.afterClosed().subscribe(result => {
@@ -77,5 +81,4 @@ export class UserListComponent implements OnInit {
       this.isActive = true;
     })
   }
-
 }

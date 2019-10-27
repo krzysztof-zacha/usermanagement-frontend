@@ -8,12 +8,12 @@
 
 <mat-progress-spinner mode="indeterminate" *ngIf="!isActive">
 </mat-progress-spinner>
-<div class="col-md-12" *ngIf="isActive">
+<div class="col-md-12" *ngIf="showTable()">
   <mat-form-field>
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
   </mat-form-field>
 </div>
-<div class="col-md-12" *ngIf="isActive">
+<div class="col-md-12" *ngIf="showTable()">
   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
     <ng-container matColumnDef="username">
